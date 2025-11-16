@@ -1,3 +1,4 @@
+// frontend/src/main.jsx
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -5,6 +6,9 @@ import App from './App'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import AdminCreateFlight from './components/AdminCreateFlight'
+import FlightDetails from './pages/FlightDetails'
+import MyBookings from './pages/MyBookings'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -13,7 +17,11 @@ createRoot(document.getElementById('root')).render(
         <Route index element={<Home/>} />
         <Route path="login" element={<Login/>} />
         <Route path="register" element={<Register/>} />
+        <Route path="admin" element={<AdminCreateFlight/>} />
+        <Route path="flights/:id" element={<FlightDetails/>} />
+        <Route path="my-bookings" element={<MyBookings/>} />
       </Route>
     </Routes>
   </BrowserRouter>
 )
+
